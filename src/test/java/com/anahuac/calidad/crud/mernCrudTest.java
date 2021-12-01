@@ -30,7 +30,9 @@ public class mernCrudTest {
   @Before
   public void setUp() throws Exception {
     WebDriverManager.chromedriver().setup();
-    driver = new ChromeDriver();
+    ChromeOptions options = new ChromeOptions();
+	options.addArguments("--headless");
+    driver = new ChromeDriver(options);
     driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     js = (JavascriptExecutor) driver;
   }
