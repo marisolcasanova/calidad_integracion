@@ -1,10 +1,12 @@
-package com.anahuac.calidad.funcionales.crud;
+package com.anahuac.calidad.crud;
 
 
 import java.util.regex.Pattern;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
+import org.junit.runners.MethodSorters;
+
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
@@ -17,6 +19,7 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class mernCrudTest {
   private WebDriver driver;
   private String baseUrl;
@@ -32,8 +35,8 @@ public class mernCrudTest {
   }
 
   @Test
-  public void testadd() throws Exception {
-    driver.get("http://localhost:3000");
+  public void atestadd() throws Exception {
+    driver.get("https://mern-crud.herokuapp.com/");
     driver.findElement(By.xpath("//div[@id='root']/div/div[2]/button")).click();
     driver.findElement(By.name("name")).click();
     driver.findElement(By.name("name")).clear();
@@ -56,8 +59,8 @@ public class mernCrudTest {
 
 
   @Test
-  public void testUpdate() throws Exception {
-	  driver.get("http://localhost:3000");
+  public void ctestUpdate() throws Exception {
+	  driver.get("https://mern-crud.herokuapp.com/");
 	  driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td[5]/button")).click();
 	  driver.findElement(By.name("name")).click();
 	  driver.findElement(By.name("name")).clear();
@@ -72,8 +75,8 @@ public class mernCrudTest {
   }
   
   @Test
-  public void testread() throws Exception {
-	  driver.get("http://localhost:3000");
+  public void btestread() throws Exception {
+	  driver.get("https://mern-crud.herokuapp.com/");
 	  List<WebElement> elementsList = driver.findElements(By.xpath("//td"));
 	  for (WebElement element: elementsList) {
 		  System.out.println(element.getText());
@@ -82,8 +85,8 @@ public class mernCrudTest {
   }
   
   @Test
-  public void testdelete() throws Exception {
-	    driver.get("http://localhost:3000");
+  public void dtestdelete() throws Exception {
+	    driver.get("https://mern-crud.herokuapp.com/");
 	    Boolean isPresentitem = driver.findElements(By.xpath("//button[@class='ui black button']")).size()>0;
 	    if(!isPresentitem) {
 	        driver.findElement(By.xpath("//div[@id='root']/div/div[2]/button")).click();
