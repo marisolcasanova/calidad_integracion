@@ -34,7 +34,7 @@ public class mernCrudTest {
    
     options.addArguments("--no-sandbox");
     options.addArguments("--disable-setuid-sandbox");
-   // options.addArguments("--remote-debugging-port=9222");
+    options.addArguments("--remote-debugging-port=1559");
     options.addArguments("--disable-dev-shm-using");
     options.addArguments("--disable-extensions"); 
     options.addArguments("--disable-gpu");
