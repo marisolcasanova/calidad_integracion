@@ -15,7 +15,7 @@ jobs:
       - image: cimg/openjdk:17.0.0
         environment:
           DB_ROOT_USER: root
-          DB_URL: jdbc:mysql://127.0.0.1:3306/pruebas_db
+          DB_URL: jdbc:mysql://127.0.0.1:33060/pruebas_db
           DB_DRIVER: com.mysql.cj.jdbc.Driver
           DB_PASS: ""
       # MySQL Database
