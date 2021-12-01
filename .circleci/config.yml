@@ -29,6 +29,7 @@ jobs:
     steps:
       # Checkout the code as the first step.
       - checkout
+      - browser-tools/install-chromedriver
       # Use mvn clean and package as the standard maven build phase
       - run:
           name: Build
@@ -47,6 +48,9 @@ jobs:
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+orbs:
+  browser-tools: circleci/browser-tools@1.2.3
+
 workflows:
   regression: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
