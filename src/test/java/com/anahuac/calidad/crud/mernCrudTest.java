@@ -31,9 +31,17 @@ public class mernCrudTest {
   public void setUp() throws Exception {
     WebDriverManager.chromedriver().setup();
     ChromeOptions options = new ChromeOptions();
+   
     options.addArguments("--no-sandbox");
-    options.addArguments("--disable-dev-shm-usage");
-    driver = new ChromeDriver();
+    options.addArguments("--disable-setuid-sandbox");
+    options.addArguments("--remote-debugging-port=9222");
+    options.addArguments("--disable-dev-shm-using");
+    options.addArguments("--disable-extensions"); 
+    options.addArguments("--disable-gpu");
+    options.addArguments("start-maximized");
+    options.addArguments("disable-infobars");
+
+    driver = new ChromeDriver(options);
     driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     js = (JavascriptExecutor) driver;
   }
