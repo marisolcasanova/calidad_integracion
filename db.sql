@@ -5,8 +5,8 @@ CREATE DATABASE IF NOT EXISTS `pruebas_db` DEFAULT CHARACTER SET utf8 COLLATE ut
 USE `pruebas_db`;
 
 CREATE TABLE IF NOT EXISTS `alumnos_tb1` (
-  `id` int(11),
-  `nombre` varchar(50),
-  `email` varchar(50),
-  `edad` int(11)
+  `id` int(20),
+  `nombre` varchar(80),
+  `email` varchar(90),
+  `edad` int(20)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
