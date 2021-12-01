@@ -2,7 +2,7 @@ dist: trusty
 sudo: enabled
 language: java
 jdk:
-- openjdk11
+- openjdk8
 services:
   - mysql
 before_install:
