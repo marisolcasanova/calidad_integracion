@@ -1,6 +1,9 @@
 dist: trusty
+sudo: enabled
 language: java
 jdk:
 - openjdk11
 services:
   - mysql
+before_install:
+- mysql -u root --password="" < test/travis.sql
