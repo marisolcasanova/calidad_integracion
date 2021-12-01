@@ -29,6 +29,7 @@ jobs:
     steps:
       # Checkout the code as the first step.
       - checkout
+      - browser-tools/install-chrome
       - browser-tools/install-chromedriver
       # Use mvn clean and package as the standard maven build phase
       - run:
